@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import Drum from "./Drum";
+import DrumPad from "./DrumPad";
+import objOne from "./Object";
 import "./styles.scss";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentObj: objOne
+    };
     //this.handlechange = this.handlechange.bind(this)
   }
 
@@ -15,7 +18,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Drum onClick={this.playSound} />
+        <DrumPad />
       </div>
     );
   }
