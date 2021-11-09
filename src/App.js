@@ -14,11 +14,12 @@ export default class App extends Component {
 
   //define event listeners
   playSound(e) {}
+
   //render
   render() {
     return (
       <div className="App">
-        <DrumPad />
+        <DrumPad currentObj={this.state.currentObj} />
       </div>
     );
   }

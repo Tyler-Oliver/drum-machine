@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 
 export default class Drum extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
-    return <div></div>;
+    return (
+      <div className="drum" id={this.props.keyTrigger}>
+        <audio
+          className="sound"
+          id={this.props.drumId}
+          src={this.props.drumSound}
+        />
+        {this.props.keyTrigger}
+      </div>
+    );
   }
   //this.handleChange=this.handleChange.bind(this)
 
