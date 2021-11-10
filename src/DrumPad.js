@@ -9,8 +9,8 @@ export default class DrumPad extends Component {
           <Drum
             keyCode={drumPadArr[i].keyCode}
             keyTrigger={drumPadArr[i].keyTrigger}
-            drumId={drumPadArr[i].id}
-            drumSound={drumPadArr[i].url}
+            soundId={drumPadArr[i].id}
+            sound={drumPadArr[i].url}
           />
         </div>
       );
