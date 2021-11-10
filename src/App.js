@@ -13,7 +13,6 @@ export default class App extends Component {
   }
 
   //define event listeners
-  playSound(e) {}
 
   //render
   render() {

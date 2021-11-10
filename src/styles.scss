@@ -24,7 +24,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin: 100px auto;
   height: 300px;
   width: 300px;
   border: 1px solid red;
@@ -35,4 +34,20 @@ body {
   height: 90px;
   width: 90px;
   border: 1px solid black;
+}
+
+.controlPad {
+  border: 1px solid purple;
+  height: 300px;
+  width: 300px;
+}
+
+.masterPad {
+  margin: 0 auto;
+  height: 400px;
+  width: 650px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid blue;
 }
