@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Drum from "./Drum";
-import ControlPad from "./ControlPad";
 
 export default class DrumPad extends Component {
   render() {
@@ -16,11 +15,6 @@ export default class DrumPad extends Component {
         </div>
       );
     });
-    return (
-      <div className="masterPad">
-        <div className="drumPad">{drumPad}</div>
-        <ControlPad />
-      </div>
-    );
+    return <div className="drumPad">{drumPad}</div>;
   }
 }

@@ -7,6 +7,13 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  margin: 0 auto;
+  height: 400px;
+  width: 650px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid blue;
 }
 
 body {
@@ -42,12 +49,40 @@ body {
   width: 300px;
 }
 
-.masterPad {
-  margin: 0 auto;
-  height: 400px;
-  width: 650px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid blue;
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  width: 60px;
+
+  input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    left: 0px;
+    bottom: 0px;
+    transition: .5s;
+    background-color: gray;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(100%);
+  }
 }
