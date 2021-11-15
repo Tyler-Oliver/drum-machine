@@ -11,6 +11,8 @@ export default class DrumPad extends Component {
             keyTrigger={drumPadArr[i].keyTrigger}
             soundId={drumPadArr[i].id}
             sound={drumPadArr[i].url}
+            power={this.props.power}
+            updateDisplay={this.props.updateDisplay}
           />
         </div>
       );

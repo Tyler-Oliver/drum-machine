@@ -26,7 +26,10 @@ export default class Drum extends Component {
   }
 
   playSound() {
-    document.getElementById(this.props.soundId).play();
+    if (this.props.power) {
+      document.getElementById(this.props.soundId).play();
+      this.props.updateDisplay(this.props.soundId.replace(/-/g, " "));
+    }
   }
 
   render() {
