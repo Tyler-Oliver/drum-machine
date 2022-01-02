@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class Drum extends Component {
   constructor(props) {
     super(props);
-
     this.playSound = this.playSound.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -19,7 +18,6 @@ export default class Drum extends Component {
   }
 
   handleKeyDown(e) {
-    console.log(e.keyCode);
     if (e.keyCode === this.props.keyCode) {
       this.playSound();
     }
@@ -34,7 +32,11 @@ export default class Drum extends Component {
 
   render() {
     return (
-      <div className="drum" id={this.props.keyTrigger} onClick={this.playSound}>
+      <div
+        className="inner-drum"
+        id={this.props.keyTrigger}
+        onClick={this.playSound}
+      >
         <audio
           className="sound"
           id={this.props.soundId}

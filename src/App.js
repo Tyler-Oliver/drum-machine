@@ -47,32 +47,33 @@ export default class App extends Component {
 
   //render
   render() {
-    console.log(this.state.power);
     return (
-      <div className="App">
-        <DrumPad
-          currentObj={this.state.currentObj}
-          power={this.state.power}
-          updateDisplay={this.displaySoundName}
-        />
+      <div className="app">
+        <div id="my-container">
+          <DrumPad
+            currentObj={this.state.currentObj}
+            power={this.state.power}
+            updateDisplay={this.displaySoundName}
+          />
 
-        <div className="controlPad">
-          <div className="objSwitch">
-            <p>objSwitch</p>
-            <label className="switch" onChange={this.objSwitch}>
-              <input type="checkbox" />
-              <span className="slider"></span>
-            </label>
-          </div>
-          <div className="pwrSwitch">
-            <p>pwrSwitch</p>
-            <label className="switch" onChange={this.pwrSwitch}>
-              <input type="checkbox" />
-              <span className="slider"></span>
-            </label>
-          </div>
-          <div className="display">
-            <p>{this.state.display}</p>
+          <div id="control-pad">
+            <div id="objSwitch" className="my-switch">
+              <p>objSwitch</p>
+              <label className="switch" onChange={this.objSwitch}>
+                <input type="checkbox" />
+                <span className="slider"></span>
+              </label>
+            </div>
+            <div id="pwrSwitch" className="my-switch">
+              <p>pwrSwitch</p>
+              <label className="switch" onChange={this.pwrSwitch}>
+                <input type="checkbox" />
+                <span className="slider"></span>
+              </label>
+            </div>
+            <div id="display">
+              <p>{this.state.display}</p>
+            </div>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ export default class DrumPad extends Component {
   render() {
     let drumPad = this.props.currentObj.map((currentVal, i, drumPadArr) => {
       return (
-        <div key={drumPadArr[i].id}>
+        <div className="drum" key={drumPadArr[i].id}>
           <Drum
             keyCode={drumPadArr[i].keyCode}
             keyTrigger={drumPadArr[i].keyTrigger}
@@ -17,6 +17,6 @@ export default class DrumPad extends Component {
         </div>
       );
     });
-    return <div className="drumPad">{drumPad}</div>;
+    return <div id="drum-pad">{drumPad}</div>;
   }
 }
