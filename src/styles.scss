@@ -1,3 +1,9 @@
+$base-color-1: #FFFFFF;
+$base-color-2: #DEC3B5;
+$base-color-3: #BF896C;
+$base-color-4: #8A583D;
+$base-color-5: #2D2019;
+
 * {
   font-size: 16px;
   box-sizing: border-box;
@@ -15,10 +21,11 @@ body, html {
   line-height: 1.4em;
   height: 100vh;
   width: 100%;
-  background-color: beige;
+  background-color: $base-color-1;
 }
 
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,8 +34,8 @@ body, html {
   margin: 0 auto;
   height: 400px;
   width: 650px;
-  border: 1px solid blue;
-  background-color: gray;
+  border: 5px solid black;
+  background-color: $base-color-3;
 
   #my-container {
     display: flex;
@@ -37,92 +44,131 @@ body, html {
     height: 80%;
     width: 90%;
     margin: 0 auto;
-    border: 1px solid white;
 
-  #drum-pad {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 50%;
-    border: 1px solid red;
+    #drum-pad {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      height: 100%;
+      width: 45%;
 
-    .drum {
-      height: calc(100%/3);
-      width: calc(100%/3);
-      margin: 0;
-      padding: 0;
-      cursor: pointer;
+      .drum {
+        height: calc(100%/3);
+        width: calc(100%/3);
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        border: 1px solid black;
+        background-color: white;
+
+        .inner-drum {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
+          background-color: $base-color-1;
+        }
+      }
+    }
+
+    #control-pad {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 45%;
+      background-color: $base-color-1;
       border: 1px solid black;
-      background-color: white;
 
-      .inner-drum {
-        height: 100%;
+      .my-switch {
+        height: 30%;
         width: 100%;
+        margin: 0 auto;
+
+        .switch {
+          position: relative;
+          display: inline-block;
+          height: 30%;
+          width: 60px;
+      
+          .my-input {
+            opacity: 0;
+            height: 0;
+            width: 0;
+          }
+      
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $base-color-2;
+          }
+      
+          .slider:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 50%;
+            left: 0px;
+            bottom: 0px;
+            transition: .5s;
+            background-color: $base-color-5;
+          }
+      
+          input:checked + .slider:before {
+            transform: translateX(100%);
+          }
+        }
+      }
+
+      #display {
+        width: 100px;
+        margin: 0 auto;
+        background-color: $base-color-1;
+        border: 1px solid black
       }
     }
   }
 
-  #control-pad {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border: 1px solid purple;
-    height: 100%;
-    width: 50%;
-
-    .my-switch {
-      height: calc(100%/3);
-      width: 100%;
-      margin: 0 auto;
-      border: 1px solid white;
-
-      .switch {
-        position: relative;
-        display: inline-block;
-        height: 50%;
-        width: 60px;
-        border: 1px solid black;
-      
-        input {
-          opacity: 0;
-          height: 0;
-          width: 0;
-        }
-      
-        .slider {
-          position: absolute;
-          cursor: pointer;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          background-color: gray;
-        }
-      
-        .slider:before {
-          position: absolute;
-          content: "";
-          height: 100%;
-          width: 50%;
-          left: 0px;
-          bottom: 0px;
-          transition: .5s;
-          background-color: black;
-        }
-      
-        input:checked + .slider:before {
-          transform: translateX(100%);
-        }
-    }
-    }
-    #display {
-      background-color: white;
-      width: 40%;
-      margin: 0 auto;
-      border: 1px solid black;
-    }
+  #signature {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 5px auto;
   }
 }
+
+/*Responsive Design*/
+
+@media (max-width: 700px) {
+  .app {
+    height: calc(100vh*.8);
+    width: 80%;
+    padding: 40px;
+  
+    #my-container {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-around;
+      width: 100%;
+      height: 100%;
+
+      #drum-pad {
+        height: 45%;
+        width: 100%;
+      }
+
+      #control-pad {
+        height: 45%;
+        width: 100%;
+      }
+    }
+  }
 }

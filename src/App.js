@@ -58,16 +58,16 @@ export default class App extends Component {
 
           <div id="control-pad">
             <div id="objSwitch" className="my-switch">
-              <p>objSwitch</p>
+              <p>Sound Bank</p>
               <label className="switch" onChange={this.objSwitch}>
-                <input type="checkbox" />
+                <input className="my-input" type="checkbox" />
                 <span className="slider"></span>
               </label>
             </div>
             <div id="pwrSwitch" className="my-switch">
-              <p>pwrSwitch</p>
+              <p>Power</p>
               <label className="switch" onChange={this.pwrSwitch}>
-                <input type="checkbox" />
+                <input className="my-input" type="checkbox" />
                 <span className="slider"></span>
               </label>
             </div>
@@ -76,6 +76,7 @@ export default class App extends Component {
             </div>
           </div>
         </div>
+        <p id="signature">Created By Tyler Oliver</p>
       </div>
     );
   }
